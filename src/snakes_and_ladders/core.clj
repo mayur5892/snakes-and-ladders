@@ -11,6 +11,11 @@
       current-position
       next-position)))
 
+(defn add-snake [start end]
+  (if (> start end)
+    (hash-map start end)
+    {}))
+
 (defn dice-throw []
   4)
 

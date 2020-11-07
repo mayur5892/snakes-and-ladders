@@ -12,10 +12,9 @@
   (testing "a player should remain in current position if move exceed 100"
     (is (= 97 (move-player 97 6)))))
 
-
 (deftest add-snake-test
   (testing "add a snake starting from 97 to 13"
-    (is (= {:97 13} (add-snake 97 13))))
+    (is (= {97 13} (add-snake 97 13))))
 
   (testing "adding a snake with start > end should return empty map"
     (is (= {} (add-snake 35 70)))))
