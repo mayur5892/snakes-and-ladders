@@ -26,8 +26,11 @@
     (save-snake start end)
     {}))
 
-(defn dice-throw []
-  4)
+(defn throw-crooked-dice []
+  (first (shuffle [2 4 6])))
+
+(defn throw-normal-dice []
+  (first (shuffle [1 2 3 4 5 6])))
 
 (defn play-next [player-id]
   (let [current-position (fetch-player-current-position player-id)
