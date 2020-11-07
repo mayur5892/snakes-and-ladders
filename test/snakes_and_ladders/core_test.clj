@@ -4,13 +4,16 @@
 
 (deftest move-player-test
   (testing "a player should move from initial position by the number on dice throw"
-    (is (= 6 (move-player 0 6))))
+    (is (= 6 (move-player :player1 0 6 {}))))
 
   (testing "a player should move from current position by the number on dice throw"
-    (is (= 52 (move-player 50 2))))
+    (is (= 52 (move-player :player2 50 2 {}))))
 
   (testing "a player should remain in current position if move exceed 100"
-    (is (= 97 (move-player 97 6)))))
+    (is (= 97 (move-player :player3 97 6 {}))))
+
+  (testing "a player should move to snake end position if new position has snake"
+    (is (= 16 (move-player :player3 50 6 {56 16})))))
 
 (deftest add-snake-test
   (testing "add a snake starting from 97 to 13"
